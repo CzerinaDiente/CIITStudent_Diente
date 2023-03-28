@@ -9,8 +9,10 @@ public class DiceScript : MonoBehaviour
     bool hasLanded;
     bool thrown;
     int diceValue;
+    public PlayerHop playerMove;
 
     [SerializeField] DiceSide[] _ds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,14 @@ public class DiceScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             RollDice();
+            SideValueCheck();
         }
-
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Reset();
+            RollDice();
+            SideValueCheck();
+        }
     }
 
     void RollDice()
@@ -38,7 +46,7 @@ public class DiceScript : MonoBehaviour
             thrown = true;
             rb.useGravity = true;
 
-            rb.AddTorque(Random.Range(25, 100), Random.Range(25, 100), Random.Range(25, 100));
+            rb.AddTorque(Random.Range(25, 100), Random.Range(25, 100), Random.Range(25, 100));            
         }
 
         else if (thrown && hasLanded)
@@ -49,10 +57,23 @@ public class DiceScript : MonoBehaviour
 
     void Reset()
     {
-        transform.position = initialPos;
         thrown = false;
         hasLanded = false;
         rb.useGravity = false;
         rb.isKinematic = false;
+        transform.position = initialPos;
+    }
+
+    void SideValueCheck()
+    {
+        foreach (DiceSide side in _ds)
+        {
+            if (side.OnGround())
+            {
+                diceValue = side.sideValue;
+                playerMove.numberOfJump = diceValue;
+            }
+        }
+        diceValue = 0;
     }
 }
