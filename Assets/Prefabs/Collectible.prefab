@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6716984173360899674
+--- !u!1 &5715366297446799157
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8506163412995955375}
-  - component: {fileID: 555841018285145986}
-  - component: {fileID: 8228412966316936187}
-  - component: {fileID: 6716984173360899673}
-  - component: {fileID: 284286440665374231}
+  - component: {fileID: 5715366297446799153}
+  - component: {fileID: 5715366297446799158}
+  - component: {fileID: 5715366297446799159}
+  - component: {fileID: 5715366297446799156}
   m_Layer: 0
-  m_Name: Obstacle_1
-  m_TagString: Untagged
+  m_Name: Collectible
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8506163412995955375
+--- !u!4 &5715366297446799153
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6716984173360899674}
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -3.2900004, z: -15.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 5715366297446799157}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0.13470769, y: -1.79, z: 44}
+  m_LocalScale: {x: 0.91049, y: 0.05909808, z: 0.91049}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &555841018285145986
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!33 &5715366297446799158
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6716984173360899674}
-  m_Mesh: {fileID: 744933921351850280, guid: 7b312d241368b794186a7a7d861b2522, type: 3}
---- !u!23 &8228412966316936187
+  m_GameObject: {fileID: 5715366297446799157}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5715366297446799159
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6716984173360899674}
+  m_GameObject: {fileID: 5715366297446799157}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,8 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5635484798206224817, guid: 7b312d241368b794186a7a7d861b2522, type: 3}
-  - {fileID: -5209386559919585115, guid: 7b312d241368b794186a7a7d861b2522, type: 3}
+  - {fileID: 2100000, guid: c19f15727067c2b44a4cb93afbdf6814, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,36 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6716984173360899673
-MonoBehaviour:
+--- !u!136 &5715366297446799156
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6716984173360899674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a016024da45e5514fb4f6a3295fe257d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spinning: {x: 0, y: 3600, z: 0}
-  Duration: 25
-  loopCount: -1
-  loop: 2
-  startPosition: {x: 0, y: 0, z: 0}
-  endPosition: {x: 0, y: 0, z: 0}
-  LRDuration: 0
---- !u!64 &284286440665374231
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6716984173360899674}
+  m_GameObject: {fileID: 5715366297446799157}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 744933921351850280, guid: 7b312d241368b794186a7a7d861b2522, type: 3}
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
