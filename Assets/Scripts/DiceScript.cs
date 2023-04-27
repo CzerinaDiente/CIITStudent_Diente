@@ -26,12 +26,7 @@ public class DiceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RollDice();
-            SideValueCheck();
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Reset();
             RollDice();
@@ -71,7 +66,7 @@ public class DiceScript : MonoBehaviour
             if (side.OnGround())
             {
                 diceValue = side.sideValue;
-                playerMove.numberOfJump = diceValue;
+                //playerMove.numberOfJump = diceValue;
             }
         }
         diceValue = 0;
